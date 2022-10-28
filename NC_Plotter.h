@@ -66,11 +66,11 @@ void NC_Plotter::PlotProbabilityOverCycles(const int size, float probability[], 
 
   printf("\nChance of getting pregnant within 13 cycles from fit is %4.3f\n\n", fit->Eval(13));
   // Add a legend to the canvas
-  TLegend *legend = new TLegend(0.61,0.25,0.91,0.15);
+  TLegend *legend = new TLegend(0.58,0.25,0.91,0.15);
   legend->SetTextSize(0.035);
   legend->SetBorderSize(0);
   legend->AddEntry(g_overallProbability, "Cummulative probability","fl");
-  legend->AddEntry(fit, "Regression","l");
+  legend->AddEntry(fit, "Functional approximation","l");
   legend->Draw();
 
   // Save plot as pdf
@@ -134,11 +134,11 @@ void NC_Plotter::DrawHistogram(const int size, TH1 *hist) {
   }
 
   // Add a legend to the canvas
-  TLegend *legend_hist = new TLegend(0.76,0.95,0.91,0.85);
+  TLegend *legend_hist = new TLegend(0.61,0.95,0.91,0.85);
   legend_hist->SetTextSize(0.035);
   legend_hist->SetBorderSize(0);
   legend_hist->AddEntry(hist, "Pregnancies","fl");
-  legend_hist->AddEntry(fit_hist, "Regression","l");
+  legend_hist->AddEntry(fit_hist, "Functional approximation","l");
   legend_hist->Draw();
 
   // Save plot as pdf
